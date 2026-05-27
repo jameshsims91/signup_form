@@ -198,7 +198,7 @@ p a:visited {
 }
 
 .btn:hover {
-  background-color: rgb(241, 111, 4)
+  background-color: rgb(241, 111, 4);
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.4), 0 6px 12px rgba(0, 0, 0, 0.15);
   background-position: 50% 0;
   transform: translateY(-2px);
