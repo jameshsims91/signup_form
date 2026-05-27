@@ -1,0 +1,210 @@
+@font-face {
+  font-family: 'OdinFont';
+  src: url('./fonts/Norsebold.woff2') format('woff2'),
+       url('./fonts/Norsebold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  background-color: #f0f2f5;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.form-side {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+}
+
+.image-side {
+  flex: 1;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.odin_logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px 40px;
+  display: flex;
+  flex-direction: initial;
+  align-items: center;
+  gap: 15px;
+}
+
+.odin_logo img {
+  height: 80px;
+  width: 100%;
+}
+
+.odin_logo span {
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  font-family:'OdinFont', sans-serif;
+}
+
+.content-side {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+}
+
+.signup-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 600px;
+}
+
+.signup-form > div {
+  flex: 1 1 calc(50% - 10px);
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-form input {
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.5rem;
+  background-color: #fafafa;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.signup-form input:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+}
+
+.signup-form input:user-invalid {
+  border-color: #d9534f;
+  background-color: #fff8f8;
+  box-shadow: 0 0 5px rgba(217, 83, 79, 0.2);
+}
+
+.signup-form div:has(input:user-invalid) label {
+  color: #d9534f;
+}
+
+.signup-form label {
+  font-size: 0.8rem;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="tel"]::placeholder {
+  font-size: 0.8rem;
+}
+
+input[type="tel"], input[type="text"], input[type="email"],
+input[type="password"] {
+  font-size: 0.8rem;
+  line-height: normal;
+}
+
+/* @keyframes linkPop {
+  0%, 100% {
+    transform: scale(1);
+    color: rgb(241, 71, 4);
+    text-shadow: 0 2px 4px rgba(74, 144, 226, 0.3);
+  }
+  50% {
+    transform: scale(1.08) translateY(-4px);
+    color: rgb(236, 176, 10);
+    text-shadow: 0 6px 12px rgba(37, 99, 235, 0.4);
+  }
+} */
+
+@keyframes colorBounceShadowLoop {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    color: rgb(241, 71, 4); 
+    text-shadow: 0 2px 4px rgba(74, 144, 226, 0.2); 
+  }
+  50% {
+    transform: translateY(-5px) scale(1.08); 
+    color: rgb(236, 176, 10);
+    text-shadow: 0 6px 12px rgba(37, 99, 235, 0.4); 
+  }
+}
+
+p a {
+  display: inline-block;
+  color: rgb(241, 71, 4);
+  text-decoration: none;
+  font-weight: 800;
+  text-shadow: 0 1px 2px rgba(74, 144, 226, 0.1);
+  transition: text-shadow 0.2s ease;
+}
+
+p a:hover {
+  color: rgb(236, 176, 10);
+  /* animation: linkPop 0.6s ease-in-out infinite; */
+  animation: colorBounceShadowLoop 0.6s ease-in-out infinite;
+}
+
+p a:visited {
+  color: rgb(1, 56, 175);
+}
+
+.btn {
+  background-color: rgb(241, 71, 4);
+  color: #ffffff;
+  border: none;
+  padding: 15px 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  background-image: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.3) 40%,
+    rgba(255,255, 255, 0.3) 45%,
+    transparent 55%
+    );
+    background-size: 250% 100%;
+    background-position: 200% 0;
+
+    transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  background-color: rgb(241, 111, 4)
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4), 0 6px 12px rgba(0, 0, 0, 0.15);
+  background-position: 50% 0;
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
